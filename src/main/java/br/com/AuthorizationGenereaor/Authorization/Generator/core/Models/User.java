@@ -1,9 +1,11 @@
 package br.com.AuthorizationGenereaor.Authorization.Generator.core.Models;
 
+import br.com.AuthorizationGenereaor.Authorization.Generator.core.DTOs.LoginRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Set;
 import java.util.UUID;
@@ -42,6 +44,13 @@ public class User {
     )
     private Set<Institution> institutions;
 
+
+    public boolean isLoginCorrect (LoginRequest loginRequest, PasswordEncoder passwordEncoder ){
+
+       return passwordEncoder.matches(loginRequest.password(), this.password);
+
+
+    }
 
 
 }
