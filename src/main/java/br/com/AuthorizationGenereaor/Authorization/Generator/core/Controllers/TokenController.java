@@ -28,7 +28,7 @@ public class TokenController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
-        var user = userRepository.findByUsername(loginRequest.username());
+        var user = userRepository.findByName(loginRequest.username());
 
 
         //se o usuario for vazio e se o login nao bate, ele joga uma exceptions

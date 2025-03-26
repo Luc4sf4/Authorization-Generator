@@ -1,1 +1,0 @@
-INSERT IGNORE INTO tb_roles (roleId, name) VALUES (1, 'ADMIN'), (2, 'PROFESSOR'), (3, 'SECRETARIO'), (4, 'ALUNO');)
